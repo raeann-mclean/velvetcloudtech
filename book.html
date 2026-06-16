@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Free Audit — Velvet Cloud Tech</title>
+  <meta name="description" content="Book your free 15-minute Cloud & Security Audit with Velvet Cloud Tech. Pick a time that suits you and tell me a little about your business." />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <!-- ===== CALENDLY: this stylesheet + the script near the bottom power the embed ===== -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Velvet Cloud Tech home">
+        <svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6c4df2"/><stop offset="1" stop-color="#ff7a59"/></linearGradient></defs><rect width="64" height="64" rx="16" fill="url(#bg)"/><path fill="#fff" d="M44.5 40.5H22a8 8 0 0 1-1.2-15.9 11 11 0 0 1 21 .8 7.5 7.5 0 0 1 2.7 15.1Z"/><circle cx="32" cy="31" r="3.4" fill="#6c4df2"/></svg>
+        Velvet Cloud
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-cta">
+        <a class="btn btn--ghost" href="pricing.html">Pricing</a>
+        <a class="btn btn--primary" href="contact.html">Contact</a>
+        <button class="nav-toggle" aria-label="Menu" aria-controls="nav-links" aria-expanded="false"><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-head">
+      <div class="container narrow center">
+        <p class="eyebrow">Free 15-minute Cloud &amp; Security Audit</p>
+        <h1>Let's find your two or three biggest tech risks.</h1>
+        <p class="lead muted">Pick a time on the calendar, fill in a few details, and I'll come prepared.</p>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="container">
+        <div class="hero-grid" style="align-items:start;gap:40px">
+
+          <!-- LEFT: Calendly -->
+          <div>
+            <h2 style="font-size:1.4rem">1. Pick a time</h2>
+            <div class="calendly-wrap" style="margin-top:14px">
+              <!-- ===== CALENDLY EMBED =====
+                   When ready: set CALENDLY_URL in js below OR replace the placeholder div
+                   with: <div class="calendly-inline-widget" data-url="https://calendly.com/YOUR-HANDLE/audit"></div>
+              -->
+              <div id="calendly-target">
+                <div class="embed-placeholder">
+                  <strong style="color:var(--ink);font-size:1.1rem;font-family:var(--font-head)">Your Calendly will show here</strong>
+                  <p style="margin:10px 0 0">Open <code>book.html</code> and paste your scheduling link into the
+                  <code>CALENDLY_URL</code> line near the bottom. Full steps are in <code>README.md</code>.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: Intake form -->
+          <div>
+            <h2 style="font-size:1.4rem">2. Tell me a little about you</h2>
+            <p class="muted" style="margin-top:-4px">So our 15 minutes go straight to what matters.</p>
+
+            <!-- Set action="" to your Formspree endpoint to receive these by email. See README. -->
+            <form class="form" action="" method="POST" data-demo>
+              <div class="field">
+                <label for="biz">Business name <span class="req">*</span></label>
+                <input id="biz" name="business" type="text" required placeholder="e.g. Riverside Dental" />
+              </div>
+              <div class="field">
+                <label for="site">Website <span class="muted" style="font-weight:500">(if you have one)</span></label>
+                <input id="site" name="website" type="text" placeholder="yourbusiness.com" />
+              </div>
+              <div class="field">
+                <label for="email">Email <span class="req">*</span></label>
+                <input id="email" name="email" type="email" required placeholder="you@yourbusiness.com" />
+              </div>
+              <div class="field">
+                <label for="issue">Biggest issue right now <span class="req">*</span></label>
+                <textarea id="issue" name="issue" required placeholder="e.g. Our site is slow and I'm not sure anything is backed up."></textarea>
+              </div>
+              <div class="field">
+                <label for="budget">Rough budget <span class="muted" style="font-weight:500">(optional)</span></label>
+                <select id="budget" name="budget">
+                  <option value="">Prefer not to say</option>
+                  <option>Under $250</option>
+                  <option>$250–$700</option>
+                  <option>$700–$1,500</option>
+                  <option>$1,500+</option>
+                  <option>Not sure yet</option>
+                </select>
+              </div>
+              <button class="btn btn--primary btn--lg" type="submit">Send my details</button>
+              <p class="form-result form-note" role="status" hidden></p>
+              <p class="form-note">Booking a time above already reserves your slot — this form just gives me a head start. I reply within 24–48 hours.</p>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html">
+            <svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="fg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6c4df2"/><stop offset="1" stop-color="#ff7a59"/></linearGradient></defs><rect width="64" height="64" rx="16" fill="url(#fg)"/><path fill="#fff" d="M44.5 40.5H22a8 8 0 0 1-1.2-15.9 11 11 0 0 1 21 .8 7.5 7.5 0 0 1 2.7 15.1Z"/><circle cx="32" cy="31" r="3.4" fill="#6c4df2"/></svg>
+            Velvet Cloud
+          </a>
+          <p style="max-width:34ch;color:#a9a8c0">Cloud infrastructure, security, IT — or whatever tech thing you need help with!</p>
+          <a href="mailto:help@velvetcloudtech.com">help@velvetcloudtech.com</a>
+        </div>
+        <div><h4>Explore</h4><ul><li><a href="services.html">Services</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div><h4>Services</h4><ul><li><a href="services.html#it">Your IT department</a></li><li><a href="services.html#website">Website package</a></li><li><a href="services.html#automation">AI automation</a></li></ul></div>
+        <div><h4>Get started</h4><ul><li><a href="book.html">Book free audit</a></li><li><a href="pricing.html">Request a quote</a></li><li><a href="contact.html">Ask a question</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> Velvet Cloud Tech · velvetcloudtech.com</span>
+        <span>Based locally · Replies within 24–48 hours</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+
+  <!-- ===== CALENDLY LOADER =====
+       1) Create a free Calendly event called "Free 15-min Cloud & Security Audit".
+       2) Copy your event link and paste it between the quotes below.
+       3) Save & refresh — the placeholder is replaced by the live calendar automatically.
+  -->
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  <script>
+    var CALENDLY_URL = "https://calendly.com/raeannmcl/free-15-min-cloud-security-audit"; // e.g. "https://calendly.com/your-handle/audit"
+    (function () {
+      if (!CALENDLY_URL) return; // keep the friendly placeholder until you add your link
+      var target = document.getElementById("calendly-target");
+      target.innerHTML = "";
+      var w = document.createElement("div");
+      w.className = "calendly-inline-widget";
+      w.setAttribute("data-url", CALENDLY_URL + "?hide_gdpr_banner=1&primary_color=6c4df2");
+      target.appendChild(w);
+      // widget.js auto-initializes any .calendly-inline-widget present; re-init if it loaded first
+      if (window.Calendly && Calendly.initInlineWidgets) Calendly.initInlineWidgets();
+    })();
+  </script>
+</body>
+</html>
