@@ -4,20 +4,20 @@
    ========================================================= */
 
 :root {
-  /* Brand palette — "velvet cloud" */
-  --ink:        #1c1b29;   /* near-black headings */
-  --ink-soft:   #4a4860;   /* body text */
-  --muted:      #6f6d83;   /* captions, meta */
-  --cream:      #faf8f4;   /* page background */
-  --card:       #ffffff;   /* surfaces */
-  --line:       #ece8e1;   /* hairline borders */
+  /* Brand palette — "velvet night" (dark mode) */
+  --ink:        #f4f3fb;   /* near-white headings */
+  --ink-soft:   #c8c6db;   /* body text */
+  --muted:      #918fab;   /* captions, meta */
+  --cream:      #0e0d17;   /* page background */
+  --card:       #181626;   /* surfaces */
+  --line:       #2b2940;   /* hairline borders */
 
-  --violet:     #6c4df2;   /* primary */
-  --violet-700: #5a3bd6;   /* primary hover */
-  --violet-tint:#f2eeff;   /* tint */
+  --violet:     #7c5cff;   /* primary */
+  --violet-700: #9279ff;   /* primary hover / links (lighter on dark) */
+  --violet-tint:#181430;   /* tinted section background */
   --coral:      #ff7a59;   /* warm accent */
-  --coral-soft: #ffe9e2;
-  --navy:       #12122b;   /* deep footer / dark sections */
+  --coral-soft: #2a1a14;
+  --navy:       #08070e;   /* deep footer / dark sections */
   --gold:       #e8b04b;
 
   /* Type */
@@ -27,10 +27,13 @@
   /* Spacing / shape */
   --radius:   16px;
   --radius-sm: 10px;
-  --shadow:   0 1px 2px rgba(28,27,41,.04), 0 12px 32px -12px rgba(28,27,41,.18);
-  --shadow-sm:0 1px 2px rgba(28,27,41,.05), 0 6px 16px -10px rgba(28,27,41,.15);
+  --shadow:   0 1px 2px rgba(0,0,0,.4), 0 16px 40px -16px rgba(0,0,0,.7);
+  --shadow-sm:0 1px 2px rgba(0,0,0,.35), 0 8px 20px -12px rgba(0,0,0,.6);
   --container: 1120px;
 }
+
+/* keep the OS UI (scrollbars, form controls) in dark too */
+html { color-scheme: dark; }
 
 /* ---------- Reset-ish ---------- */
 *, *::before, *::after { box-sizing: border-box; }
@@ -348,3 +351,50 @@ p  { margin: 0 0 1rem; }
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
+
+/* =========================================================
+   DARK MODE PATCHES
+   These override spots that hard-coded light colors so they
+   read correctly on the dark palette defined in :root above.
+   ========================================================= */
+
+/* translucent sticky header on dark */
+.site-header { background: rgba(14,13,23,.82); }
+
+/* buttons */
+.btn--ghost:hover { background: rgba(124,92,255,.12); }
+.btn--light { background: #ffffff; color: #14131f; }      /* sits on bright CTA band */
+.btn--light:hover { background: #ece8ff; }
+
+/* problem ("pain") cards */
+.pain { background: var(--card); border-color: rgba(255,122,89,.32); }
+
+/* coral icon tile */
+.card .icon--coral { color: var(--coral); }
+
+/* form controls */
+.field input, .field select, .field textarea { background: #100f1c; color: var(--ink); border-color: var(--line); }
+.field input::placeholder, .field textarea::placeholder { color: #6f6d86; }
+
+/* FAQ, calendly + embed placeholder, pills */
+.faq details { background: var(--card); }
+.calendly-wrap { background: var(--card); }
+.embed-placeholder { background: var(--card); }
+.embed-placeholder code { background: rgba(124,92,255,.18); color: #b9a6ff; }
+.badge-pill { background: var(--card); }
+
+/* status pills tuned for dark surfaces */
+.status--ok   { color: #6ee7a8; background: rgba(34,160,90,.16); }
+.status--warn { color: #f4c560; background: rgba(220,160,40,.16); }
+
+/* "What I can do for you" hero card */
+.svc-card .svc-title { color: var(--ink); }
+.svc-card .svc-item { border-color: var(--line); }
+.svc-card .svc-name { color: var(--ink); }
+.svc-card .svc-name svg { stroke: #9279ff; }
+.svc-card .svc-badge { background: rgba(124,92,255,.18); color: #b9a6ff; }
+.svc-card .svc-tag { color: var(--muted); background: rgba(255,255,255,.05); }
+.svc-card .svc-foot { border-color: var(--line); }
+.svc-card .svc-foot-text { color: var(--muted); }
+.svc-card .svc-foot-btn { color: #b9a6ff; border-color: #6c4df2; }
+.svc-card .svc-foot-btn:hover { background: rgba(124,92,255,.14); }
